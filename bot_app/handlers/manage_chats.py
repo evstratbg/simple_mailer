@@ -1,16 +1,8 @@
-from datetime import datetime as dt
-
-from telegram import ReplyKeyboardMarkup, Bot, Update, \
-    InlineKeyboardButton, InlineKeyboardMarkup, ParseMode
+from telegram import Bot, Update
 from telegram.ext import Dispatcher, MessageHandler, Filters
 
 from logger import log
 from models import Chats
-
-
-@log
-def start(bot: Bot, update: Update):
-    pass
 
 
 @log

@@ -1,14 +1,16 @@
 from peewee import (
-    SqliteDatabase, Model, TextField,
+    PostgresqlDatabase, Model, TextField,
     DateTimeField, IntegerField
 )
 
-sqlite_db = SqliteDatabase('mailer.db')
+from config import PG_CONN
+
+db = PostgresqlDatabase(**PG_CONN)
 
 
 class BaseModel(Model):
     class Meta:
-        database = sqlite_db
+        database = db
 
 
 class Chats(BaseModel):
@@ -32,4 +34,4 @@ def init_db():
 
 if __name__ == '__main__':
     init_db()
-    print('Таблицы создал')
+    print('Tables created')
