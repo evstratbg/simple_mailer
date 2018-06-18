@@ -6,6 +6,11 @@ from models import Chats
 
 
 @log
+def start(bot: Bot, update: Update):
+    pass
+
+
+@log
 def get_and_save_chat(bot: Bot, update: Update):
     if update.message.new_chat_member == bot.get_me():
         chat_id = update.effective_chat.id
